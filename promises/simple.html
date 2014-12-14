@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+	<script>
+		function test(filename){
+		  return new Promise(function (fulfill, reject){
+		    fulfill('test');
+		  });
+		}
+
+		test().then(function(x) {
+			console.log(x);
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
