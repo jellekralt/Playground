@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<input type="text" id="output" value="" />
+	<button id="next">Next!</button>
+
+	<script>
+		function *stupidGenerator() {
+			yield 'I';
+			yield 'am';
+			yield 'a';
+			yield 'useless';
+			yield 'generator';
+		}
+
+		var output = document.getElementById('output');
+		var button = document.getElementById('next');
+		var text = stupidGenerator();
+
+		output.value = text.next().value;
+
+		button.addEventListener('click', function(e) {
+			output.value = output.value + ' ' + text.next().value;
+		});
+	</script>
+</body>
+</html>
