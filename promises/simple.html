@@ -4,7 +4,9 @@
 	<script>
 		function test(filename){
 		  return new Promise(function (fulfill, reject){
-		    fulfill('test');
+		  	var timeOut = setTimeout(function() {
+		    	fulfill(timeOut);
+		    }, 1000);
 		  });
 		}
 
