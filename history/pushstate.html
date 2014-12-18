@@ -1,0 +1,83 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		.hidden {
+			display: none;
+		}
+
+		#block1 {
+			position: absolute;
+			top: 100px;
+			left: 50px;
+			height: 100px;
+			width: 200px;
+			background-color: blue;
+		}
+
+		#block2 {
+			position: absolute;
+			top: 300px;
+			left: 250px;
+			height: 100px;
+			width: 200px;
+			background-color: red;
+		}
+
+		#block3 {
+			position: absolute;
+			top: 200px;
+			left: 450px;
+			height: 100px;
+			width: 200px;
+			background-color: green;
+		}
+
+	</style>
+</head>
+<body>
+	<button class="button" data-target="#block1">Block 1</button>
+	<button class="button" data-target="#block2">Block 2</button>
+	<button class="button" data-target="#block3">Block 3</button>
+
+	<div id="block1" class="hidden">
+		Hello, world!
+	</div>
+
+	<div id="block2" class="hidden">
+		Foobar
+	</div>
+
+	<div id="block3" class="hidden">
+		Hiya
+	</div>
+
+	<script>
+		var buttons = document.querySelectorAll('.button');
+		var button;
+
+		for (var i = 0; i < buttons.length; ++i) {
+  			button = buttons[i];
+
+			button.addEventListener('click', function() {
+				var target = this.getAttribute('data-target');
+
+				console.info('Button click!', target);
+
+
+				history.pushState(null, null, target);
+			});
+		}
+			
+
+		window.addEventListener('popstate', function(e) {
+			//var state = e.originalEvent.state;
+
+console.log(e);
+			// if (state && state.module === "leave") {
+
+			// }
+		});		
+	</script>
+</body>
+</html>
