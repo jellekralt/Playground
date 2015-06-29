@@ -1,0 +1,27 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "Jelle's Playground",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jellekralt/Playground.git"
+  },
+  "keywords": [
+    "playground"
+  ],
+  "author": "Jelle Kralt <jelle@jellekralt.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jellekralt/Playground/issues"
+  },
+  "homepage": "https://github.com/jellekralt/Playground",
+  "dependencies": {
+    "express": "^4.13.0",
+    "swig": "^1.4.2"
+  }
+}
