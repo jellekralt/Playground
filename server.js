@@ -26,7 +26,15 @@ app.get('*.html', function(req, res) {
 	res.render(req.params[0].slice(1) + '.html');
 });
 
-app.use(express.static(__dirname));
+experiments.forEach(function(experiment) {
+    try {
+        app.use('/' + experiment, require('./experiments/' + experiment));
+    } catch(err) {
+        console.log('Experiment "' + experiment + '" has no node module');
+    }
+});
+
+app.use(express.static(__dirname + '/experiments'));
 
 var server = app.listen(4000, function () {
 
