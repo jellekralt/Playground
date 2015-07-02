@@ -1,4 +1,6 @@
 var express = require('express');
+var expressSession = require('express-session');
+var cookieParser = require('cookie-parser');
 var swig = require('swig');
 var path = require('path');
 var fs = require('fs');
@@ -13,6 +15,10 @@ app.engine('html', swig.renderFile);
 
 app.set('view engine', 'html');
 app.set('views', __dirname);
+
+// Session
+app.use(cookieParser());
+app.use(expressSession({secret: 'PLAYGROUND'}));
 
 // Index
 app.get('/', function (req, res) {
